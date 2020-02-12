@@ -12,8 +12,8 @@ Task 2: Priority queue-based multi-way merge approach
 Implement the function print merge results() dened in query.c. This function has two input parameters: index (an Index pointer) containing data for the query to perform; and n results (an integer) describing the number of results to output.
 This function should also nd the top n results matching document ids and their associated total scores. For this function, use the following method to nd these top-scoring documents:
 1. Use a priority queue-based multi-way merge algorithm to iterate through the n terms document lists concurrently:
- Initialise a priority queue to order the document lists based on the id of their first documents.
- Repeatedly retrieve a document from the document list at the front of the priority queue, and rearrange the priority queue so that this list is positioned according to the id of its next document (stepping through the list). Stop after processing all documents in all lists.
+  1.Initialise a priority queue to order the document lists based on the id of their first documents.
+  2.Repeatedly retrieve a document from the document list at the front of the priority queue, and rearrange the priority queue so that this list is positioned according to the id of its next document (stepping through the list). Stop after processing all documents in all lists.
 2. While iterating through the lists in this way, accumulate total scores for each document id. Use the priority queue-based top-k selection algorithm to find the maximum n results total scores and associated document ids.
 
 Task 3: Analysis of algorithms
